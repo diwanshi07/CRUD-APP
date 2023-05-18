@@ -46,4 +46,3 @@ This project includes automated tests to ensure its functionality and reliabilit
 - **Test Case 4**: [Updating the box]
   - [Providing correct id for updating the box details]
   
-You can run the tests using the following command:
