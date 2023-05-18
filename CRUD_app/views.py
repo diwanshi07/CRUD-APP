@@ -20,12 +20,9 @@ class BoxDeleteViewSet(APIView):
 
 
 class BoxCreateViewSet(APIView):
-    queryset = Box.objects.all()
-    serializer_class = BoxSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def post(self, request, *args, **kwargs):
-
         try:
             BoxService.create_box(request)
             return Response(data="Created Successfully.", status=status.HTTP_200_OK)
