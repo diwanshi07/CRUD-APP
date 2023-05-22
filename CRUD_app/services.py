@@ -14,6 +14,8 @@ class BoxService:
 
     @classmethod
     def __validate_create_request(cls, length, breadth, height):
+        if length is None or breadth is None or height is None:
+            raise APIException("Missing Dimensions")
         if length < 0 or breadth < 0 or height < 0:
             raise APIException("Invalid Dimensions")
         else:
@@ -121,6 +123,7 @@ class BoxService:
 
     @classmethod
     def create_box(cls, request):
+
         length = request.data.get("length")
         breadth = request.data.get("breadth")
         height = request.data.get("height")

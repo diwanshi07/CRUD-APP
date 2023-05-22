@@ -3,9 +3,9 @@ from django.contrib.auth.models import User
 
 class Box(models.Model):
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='boxes', default=None)
-    length = models.FloatField()
-    breadth = models.FloatField()
-    height = models.FloatField()
+    length = models.FloatField(null=False, blank=False)
+    breadth = models.FloatField(null=False, blank=False)
+    height = models.FloatField(null=False, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
